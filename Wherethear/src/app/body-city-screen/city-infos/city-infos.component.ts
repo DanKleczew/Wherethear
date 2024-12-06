@@ -1,14 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { FormatDatePipe } from '../../format-date.pipe';
 
 @Component({
   selector: 'app-city-infos',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, FormatDatePipe],
   templateUrl: './city-infos.component.html',
   styleUrl: './city-infos.component.css'
 })
 export class CityInfosComponent {
-  @Input() localTime ?: String;
+  @Input() localTime !: string;
   @Input() text ?: String;
   @Input() icon ?: String;
   @Input() temperature : number =0;
@@ -17,4 +19,5 @@ export class CityInfosComponent {
 
   ngOnInit(){console.log(this.localTime);
   }
+
 }

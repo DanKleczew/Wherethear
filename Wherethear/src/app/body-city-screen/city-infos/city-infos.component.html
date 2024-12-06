@@ -1,4 +1,7 @@
-{{this.localTime}}-{{this.text}}{{this.icon}}
+<div>{{this.localTime | formatDate }}</div>
+<div>{{this.text}}</div>
+<div><img src='https:{{this.icon}}'>
+</div>
 <br>
 {{this.temperature}}°C
 @if (this.precipitations > 0){
