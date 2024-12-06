@@ -1,1 +1,10 @@
-<p>city-infos works!</p>
+{{this.localTime}}-{{this.text}}{{this.icon}}
+<br>
+{{this.temperature}}°C
+@if (this.precipitations > 0){
+    {{this.precipitations}}mm
+    <br>
+}
+@if (this.temperature > 25){
+    {{this.humidity}} %
+}

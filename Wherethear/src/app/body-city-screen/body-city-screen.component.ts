@@ -21,11 +21,38 @@ export class BodyCityScreenComponent {
     weather : any = null;
     randomCity : string = '';
 
+    cityName?: String;
+    countryName?: String;
+    localTime?: String;
+    temperature: number = 0;
+    weatherText?: String;
+    weatherIcon?: String;
+    precipitations: number = 0;
+    humidity: number = 0;
+    sunrise?: string;
+    moonrise?: string;
+    moonphase?: string;
+    isSunUp?: boolean;
+
+
     ngOnInit(){
       let a = Math.floor(Math.random() * this.allCities.length);
       this.randomCity = this.allCities[a];
-      this.weatherService.getWeatherData(this.randomCity).then((data)=>console.log(data));
-      // todo : appliquer mille styles
+      this.weatherService.getWeatherData(this.randomCity).then((data)=>this.alimentData(data));
+    }
+    alimentData(weather : any){
+      this.cityName = weather.location.name;
+      this.countryName = weather.location.country; 
+      this.localTime = weather.location.localtime;
+      this.temperature = weather.current.temp_c;
+      this.weatherText = weather.current.condition.text;
+      this.weatherIcon = weather.current.condition.icon;
+      this.precipitations = weather.current.precip_mm;
+      this.humidity = weather.current.humidity;
+      this.sunrise = weather.forecast.forecastday[0].astro.sunrise;
+      this.moonrise = weather.forecast.forecastday[0].astro.moonrise;
+      this.moonphase = weather.forecast.forecastday[0].astro.moonphase;
+      this.isSunUp = weather.forecast.forecastday[0].astro.is_sun_up = 1 ? true: false; 
     }
 
     allCities : string[] = [

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-city-infos',
@@ -8,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './city-infos.component.css'
 })
 export class CityInfosComponent {
+  @Input() localTime ?: String;
+  @Input() text ?: String;
+  @Input() icon ?: String;
+  @Input() temperature : number =0;
+  @Input() precipitations : number = 0;
+  @Input() humidity : number = 0;
 
+  ngOnInit(){console.log(this.localTime);
+  }
 }

@@ -1,7 +1,8 @@
 <div class="outer">
-    <app-city-title></app-city-title>
+    <app-city-title [cityName]="this.cityName" [countryName]="this.countryName"></app-city-title>
     <div class="inner">
-        <app-city-infos></app-city-infos>
+        <app-city-infos [humidity]="this.humidity" [icon]="this.weatherIcon" [localTime]="this.localTime"
+                        [precipitations]="this.precipitations" [temperature]="this.temperature" [text]="this.weatherText"></app-city-infos>
         <div class="innerrer">
             <app-city-image></app-city-image>
             <app-city-astronomy></app-city-astronomy>
