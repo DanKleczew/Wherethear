@@ -1,3 +1,5 @@
-<div class="button" (onmouseover)="this.changePicture()">
+<div class="button">
+    <a routerLink="/weather" routerLinkActive="active" ariaCurrentWhenActive="page" (mouseenter)="changePicture()" (mouseleave)="changePicture()">
     <img [src]="this.pictureRef">
+    </a>
 </div>
