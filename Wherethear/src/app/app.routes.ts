@@ -9,3 +9,4 @@ export const routes: Routes = [
     {path : 'previous-locations', component: BodyListCitiesComponent},
     {path : '**', component: BodyFrontPageComponent}
 ];
+

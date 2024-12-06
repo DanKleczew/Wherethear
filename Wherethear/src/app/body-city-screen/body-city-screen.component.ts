@@ -58,7 +58,6 @@ export class BodyCityScreenComponent {
     }
     alimentFlag(data : any){
       this.flagUrl = data[0].flags.png;
-      console.log(this.flagUrl);
     }
 
     allCities : string[] = [

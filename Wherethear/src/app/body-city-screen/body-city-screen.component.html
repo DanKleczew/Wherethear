@@ -8,5 +8,7 @@
             <app-city-astronomy [moonphase]="this.moonphase" [moonrise]="this.moonrise" [sunrise]="this.sunrise"></app-city-astronomy>
         </div>
     </div>
-    <app-main-button></app-main-button>
+    <div (click)="this.ngOnInit()">
+        <app-main-button></app-main-button>
+    </div>
 </div>
