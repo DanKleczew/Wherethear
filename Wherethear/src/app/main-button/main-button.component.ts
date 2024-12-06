@@ -17,6 +17,5 @@ export class MainButtonComponent {
     }
   }
 
-pictureRef: String = 'https://cdn-icons-png.flaticon.com/512/5213/5213449.png'
-
+pictureRef: String = 'https://cdn-icons-png.flaticon.com/512/5213/5213449.png';
 }

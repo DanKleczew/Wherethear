@@ -2,6 +2,7 @@
     background: #051850;
     min-height: 3.5rem;
     min-width: 100%;
+    font-size:0.8rem;
     position:fixed;
     z-index: 1;
     bottom:0;
