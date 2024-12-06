@@ -5,6 +5,7 @@ import { CityInfosComponent } from "./city-infos/city-infos.component";
 import { CityImageComponent } from "./city-infos/city-image/city-image.component";
 import { CityAstronomyComponent } from "./city-infos/city-astronomy/city-astronomy.component";
 import { MainButtonComponent } from "../main-button/main-button.component";
+import { FlagApiService } from '../flag-api.service';
 
 @Component({
   selector: 'app-body-city-screen',
@@ -14,31 +15,32 @@ import { MainButtonComponent } from "../main-button/main-button.component";
   styleUrl: './body-city-screen.component.css'
 })
 export class BodyCityScreenComponent {
-
-    constructor( private weatherService : WeatherApiService ){ 
+    constructor( private weatherService : WeatherApiService, private flagApi : FlagApiService){ 
     }
 
     weather : any = null;
     randomCity : string = '';
 
     cityName?: String;
-    countryName?: String;
+    countryName!: String;
     localTime?: String;
-    temperature: number = 0;
+    temperature!: number;
     weatherText?: String;
     weatherIcon?: String;
-    precipitations: number = 0;
-    humidity: number = 0;
-    sunrise?: string;
-    moonrise?: string;
-    moonphase?: string;
+    precipitations!: number;
+    humidity!: number;
+    sunrise!: string;
+    moonrise!: string;
+    moonphase!: string;
     isSunUp?: boolean;
 
+    flagUrl!: String;
 
     ngOnInit(){
       let a = Math.floor(Math.random() * this.allCities.length);
       this.randomCity = this.allCities[a];
-      this.weatherService.getWeatherData(this.randomCity).then((data)=>this.alimentData(data));
+      this.weatherService.getWeatherData(this.randomCity).then((data)=>this.alimentData(data))
+      .then(()=>this.flagApi.getFlagUrl(this.countryName)).then((data)=>this.alimentFlag(data));
     }
     alimentData(weather : any){
       this.cityName = weather.location.name;
@@ -51,8 +53,12 @@ export class BodyCityScreenComponent {
       this.humidity = weather.current.humidity;
       this.sunrise = weather.forecast.forecastday[0].astro.sunrise;
       this.moonrise = weather.forecast.forecastday[0].astro.moonrise;
-      this.moonphase = weather.forecast.forecastday[0].astro.moonphase;
+      this.moonphase = weather.forecast.forecastday[0].astro.moon_phase;
       this.isSunUp = weather.forecast.forecastday[0].astro.is_sun_up = 1 ? true: false; 
+    }
+    alimentFlag(data : any){
+      this.flagUrl = data[0].flags.png;
+      console.log(this.flagUrl);
     }
 
     allCities : string[] = [

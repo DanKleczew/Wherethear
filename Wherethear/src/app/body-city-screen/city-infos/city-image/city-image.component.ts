@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { FlagApiService } from '../../../flag-api.service';
 
 @Component({
   selector: 'app-city-image',
@@ -9,4 +10,5 @@ import { Component } from '@angular/core';
 })
 export class CityImageComponent {
 
+  @Input() flagUrl !: String;
 }

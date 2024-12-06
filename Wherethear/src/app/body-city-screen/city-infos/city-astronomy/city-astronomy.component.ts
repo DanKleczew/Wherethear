@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-city-astronomy',
@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './city-astronomy.component.css'
 })
 export class CityAstronomyComponent {
-
+  @Input() sunrise !: String;
+  @Input() moonrise !: String;
+  @Input() moonphase !: String;
 }
