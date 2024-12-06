@@ -21,18 +21,18 @@ export class BodyCityScreenComponent {
     weather : any = null;
     randomCity : string = '';
 
-    cityName?: String;
+    cityName!: String;
     countryName!: String;
-    localTime?: String;
+    localTime!: String;
     temperature!: number;
-    weatherText?: String;
-    weatherIcon?: String;
+    weatherText!: String;
+    weatherIcon!: String;
     precipitations!: number;
     humidity!: number;
-    sunrise!: string;
-    moonrise!: string;
-    moonphase!: string;
-    isSunUp?: boolean;
+    sunrise!: String;
+    moonrise!: String;
+    moonphase!: String;
+    isSunUp!: boolean;
 
     flagUrl!: String;
 
