@@ -23,7 +23,7 @@ export class BodyCityScreenComponent {
 
     cityName!: String;
     countryName!: String;
-    localTime!: String;
+    localTime!: string;
     temperature!: number;
     weatherText!: String;
     weatherIcon!: String;
