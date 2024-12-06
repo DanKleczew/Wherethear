@@ -1,0 +1,15 @@
+.outer{
+    border: solid 1px red;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width:100%
+}
+.inner{
+    border: solid 1px violet;
+}
+.innerrer{
+    border: solid 1px black;
+}

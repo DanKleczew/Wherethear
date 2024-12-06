@@ -12,13 +12,4 @@ import { FooterComponent } from "./footer/footer.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  constructor( private WeatherApi : WeatherApiService ){
-    
-  }
-  weather : any = null;
-  ngOnInit(){
-    this.WeatherApi.getWeatherData('London').then((data)=>console.log(data));
-  }
-  title = 'Wherethear';
-
 }

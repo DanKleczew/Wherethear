@@ -1,8 +1,27 @@
 .image{
     height: 100vh;
     width: 100%;
-    background-image: url('../../../public/assets/canyon-9215914_1280.webp');
-    background-size: cover; /* Redimensionner l'image pour couvrir toute la surface */
-    background-position: center; /* Centrer l'image */
-    background-repeat: no-repeat; /* Empêcher la répétition de l'image */
+    background-image: url('../../../public/assets/worldmap.webp');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contents{
+    background-color: rgba(0, 0, 0, 0.411);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 30%;
+}
+p {
+    color: white;
+    font-family: 'Knewave';
+    margin-bottom: 50px;
+    font-size: 1.5em;
 }
