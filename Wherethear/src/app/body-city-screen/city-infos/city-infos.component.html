@@ -1,13 +1,15 @@
-<div>{{this.localTime | formatDate }}</div>
+<div>{{this.localTime | FormatDatePipe }}</div>
 <div>{{this.text}}</div>
 <div><img src='https:{{this.icon}}'>
 </div>
 <br>
-{{this.temperature}}°C
+Temperature : {{this.temperature}}°C
+<br>
 @if (this.precipitations > 0){
-    {{this.precipitations}}mm
-    <br>
+    Precipitation : {{this.precipitations}}mm
+    
 }
+<br>
 @if (this.temperature > 25){
-    {{this.humidity}} %
+    Humidity : {{this.humidity}} %
 }

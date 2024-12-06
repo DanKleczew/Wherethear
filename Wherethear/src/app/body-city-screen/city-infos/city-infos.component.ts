@@ -10,7 +10,7 @@ import { FormatDatePipe } from '../../format-date.pipe';
   styleUrl: './city-infos.component.css'
 })
 export class CityInfosComponent {
-  @Input() localTime !: String;
+  @Input() localTime !: string;
   @Input() text ?: String;
   @Input() icon ?: String;
   @Input() temperature : number =0;
