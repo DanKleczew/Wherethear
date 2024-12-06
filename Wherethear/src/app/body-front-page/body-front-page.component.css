@@ -1,0 +1,8 @@
+.image{
+    height: 100vh;
+    width: 100%;
+    background-image: url('../../../public/assets/canyon-9215914_1280.webp');
+    background-size: cover; /* Redimensionner l'image pour couvrir toute la surface */
+    background-position: center; /* Centrer l'image */
+    background-repeat: no-repeat; /* Empêcher la répétition de l'image */
+}
