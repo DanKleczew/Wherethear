@@ -10,12 +10,12 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class MainButtonComponent {
   changePicture() {
-    if (this.pictureRef === 'https://cdn-icons-png.flaticon.com/512/5213/5213449.png'){
-      this.pictureRef = 'https://cdn-icons-png.flaticon.com/512/10480/10480648.png';
+    if (this.pictureSrc === './assets/5213449.png'){
+      this.pictureSrc = './assets/10480648.png';
     } else {
-      this.pictureRef = 'https://cdn-icons-png.flaticon.com/512/5213/5213449.png';
+      this.pictureSrc = './assets/5213449.png';
     }
   }
 
-pictureRef: String = 'https://cdn-icons-png.flaticon.com/512/5213/5213449.png';
+pictureSrc: String = './assets/5213449.png';
 }
