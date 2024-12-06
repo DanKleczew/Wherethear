@@ -6,11 +6,12 @@ import { CityImageComponent } from "./city-infos/city-image/city-image.component
 import { CityAstronomyComponent } from "./city-infos/city-astronomy/city-astronomy.component";
 import { MainButtonComponent } from "../main-button/main-button.component";
 import { FlagApiService } from '../flag-api.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-body-city-screen',
   standalone: true,
-  imports: [CityTitleComponent, CityInfosComponent, CityImageComponent, CityAstronomyComponent, MainButtonComponent],
+  imports: [CityTitleComponent, CityInfosComponent, CityImageComponent, CityAstronomyComponent, MainButtonComponent, CommonModule],
   templateUrl: './body-city-screen.component.html',
   styleUrl: './body-city-screen.component.css'
 })
@@ -20,6 +21,7 @@ export class BodyCityScreenComponent {
 
     weather : any = null;
     randomCity : string = '';
+    bgClass: String = '';
 
     cityName!: String;
     countryName!: String;
@@ -54,7 +56,26 @@ export class BodyCityScreenComponent {
       this.sunrise = weather.forecast.forecastday[0].astro.sunrise;
       this.moonrise = weather.forecast.forecastday[0].astro.moonrise;
       this.moonphase = weather.forecast.forecastday[0].astro.moon_phase;
-      this.isSunUp = weather.forecast.forecastday[0].astro.is_sun_up = 1 ? true: false; 
+      this.isSunUp = weather.forecast.forecastday[0].astro.is_sun_up == '1' ? true: false; 
+      if (this.isSunUp && (this.weatherText.includes('rain')|| this.weatherText.includes('Drizzle'))){
+        this.bgClass = 'day-rain'
+      }
+      else if (this.isSunUp && ( this.weatherText.includes('cloud') || this.weatherText.includes('Cloud') || this.weatherText.includes('Mist') 
+        || this.weatherText.includes('Overcast') || this.weatherText.includes('Fog'))){
+        this.bgClass = 'day-cloud'
+      }
+      else if (this.isSunUp){
+        this.bgClass = 'day-clear'
+      }
+      else if (this.weatherText.includes('rain')|| this.weatherText.includes('Drizzle')){
+        this.bgClass = 'night-rain'
+      }
+      else if (this.isSunUp && ( this.weatherText.includes('cloud') || this.weatherText.includes('Cloud') || this.weatherText.includes('mist') 
+        || this.weatherText.includes('Overcast') || this.weatherText.includes('Fog'))) {
+      this.bgClass = 'night-cloud'}
+      else {
+        this.bgClass = 'night-clear'
+      }
     }
     alimentFlag(data : any){
       this.flagUrl = data[0].flags.png;

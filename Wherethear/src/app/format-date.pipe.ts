@@ -18,7 +18,6 @@ export class FormatDatePipe implements PipeTransform {
     const day = ('0' + date.getDate()).slice(-2);
     const month = ('0' + (date.getMonth() + 1)).slice(-2);
     const year = date.getFullYear();
-    console.log(`${day}-${month}-${year}`);
     return `${day}/${month}/${year} ${date.getHours()}h${date.getMinutes()}`;
   }
 

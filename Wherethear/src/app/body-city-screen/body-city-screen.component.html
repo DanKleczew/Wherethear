@@ -1,4 +1,4 @@
-<div class="outer">
+<div class="outer" [ngClass]="this.bgClass">
     <app-city-title [cityName]="this.cityName" [countryName]="this.countryName"></app-city-title>
     <div class="inner">
         <app-city-infos [humidity]="this.humidity" [icon]="this.weatherIcon" [localTime]="this.localTime"
@@ -8,6 +8,7 @@
             <app-city-astronomy [moonphase]="this.moonphase" [moonrise]="this.moonrise" [sunrise]="this.sunrise"></app-city-astronomy>
         </div>
     </div>
+    
     <div (click)="this.ngOnInit()">
         <app-main-button></app-main-button>
     </div>

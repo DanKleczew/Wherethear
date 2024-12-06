@@ -6,7 +6,6 @@ import { BodyListCitiesComponent } from './body-list-cities/body-list-cities.com
 export const routes: Routes = [
     {path : '', component : BodyFrontPageComponent},
     {path : 'weather', component : BodyCityScreenComponent},
-    {path : 'previous-locations', component: BodyListCitiesComponent},
     {path : '**', component: BodyFrontPageComponent}
 ];
 

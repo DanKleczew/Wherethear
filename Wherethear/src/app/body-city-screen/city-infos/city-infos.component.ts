@@ -16,8 +16,4 @@ export class CityInfosComponent {
   @Input() temperature : number =0;
   @Input() precipitations : number = 0;
   @Input() humidity : number = 0;
-
-  ngOnInit(){console.log(this.localTime);
-  }
-
 }
